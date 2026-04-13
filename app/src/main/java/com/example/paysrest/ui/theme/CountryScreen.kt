@@ -56,7 +56,7 @@ fun HomeScreen(onOptionSelected: (CountryFilter) -> Unit) {
                     .padding(bottom = 16.dp),
                 contentScale = ContentScale.Fit
             )
-
+            
             Text(
                 text = "Bienvenue sur PaysRest",
                 style = MaterialTheme.typography.headlineMedium,
@@ -150,8 +150,9 @@ fun CountryItem(country: Country) {
             )
             Spacer(modifier = Modifier.width(16.dp))
             Column {
-                Text(text = country.name.common, style = MaterialTheme.typography.titleMedium)
+                Text(text = country.translations.fra.common, style = MaterialTheme.typography.titleMedium)
                 Text(text = "Capitale: ${country.capital?.joinToString() ?: "N/A"}", style = MaterialTheme.typography.bodySmall)
+                Text(text = "Continent: ${country.continents.joinToString()}", style = MaterialTheme.typography.bodySmall)
             }
         }
     }

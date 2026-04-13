@@ -9,12 +9,12 @@ import retrofit2.http.Query
 
 interface CountryApi {
     @GET("v3.1/all")
-    suspend fun getAllCountries(@Query("fields") fields: String = "name,flags,capital,population,continents"): List<Country>
+    suspend fun getAllCountries(@Query("fields") fields: String = "name,flags,capital,population,continents,translations"): List<Country>
 
     @GET("v3.1/region/{region}")
     suspend fun getCountriesByRegion(
         @Path("region") region: String,
-        @Query("fields") fields: String = "name,flags,capital,population,continents"
+        @Query("fields") fields: String = "name,flags,capital,population,continents,translations"
     ): List<Country>
 
     companion object {
